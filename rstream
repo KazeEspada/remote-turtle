@@ -1,0 +1,6 @@
+modem = peripheral.wrap("right")
+modem.open(66)
+tArgs = {...}
+file = fs.open(tArgs[1], "r")
+modem.transmit(66, 66, file.readAll())
+file.close()

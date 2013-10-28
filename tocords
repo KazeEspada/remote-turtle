@@ -1,0 +1,26 @@
+--this script is wip, right now it does not work
+
+tArgs = {...}
+cc = vector.new(gps.locate())
+nc = vector.new(tArgs[1], tArgs[2], tArgs[3])
+dc = cc - nc
+
+print "Type the number next to f in f3 while facing the direction the turtle is (for example, if it says f: 1 (WEST) type 1)"
+cf = tonumber(read())
+tf = cf - 1
+for i = 0, tf do
+turtle.turnLeft()
+end
+for i = 0, dc.x do
+turtle.forward()
+turtle.dig()
+end
+turtle.turnLeft()
+for i = 0, dc.z do
+turtle.forward()
+turtle.dig()
+end
+for i = 0, dc.y do
+turtle.up()
+turtle.digUp()
+end

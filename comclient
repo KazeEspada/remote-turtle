@@ -1,0 +1,6 @@
+modem = peripheral.wrap("right")
+modem.open(66)
+while true do
+cmd = read()
+modem.transmit(66, 66, cmd)
+end

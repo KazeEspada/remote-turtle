@@ -1,0 +1,15 @@
+modem = peripheral.wrap("right")
+modem.open(66)
+while true do
+
+ evt,
+ side,
+ freq,
+ rfrq,
+ cmd,
+ dTrvld = os.pullEvent("modem_message")
+ if loadstring(cmd) then
+ func = loadstring(cmd)
+ func()
+ end
+end
